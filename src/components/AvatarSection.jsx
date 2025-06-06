@@ -1,5 +1,5 @@
 import React from "react";
-import EditProfileModal from "./components/EditprofileModal";
+import EditProfileModal from "./components/EditProfileModal";
 import { useState } from "react";
 import NewPostModal from "./NewPostModal";
 

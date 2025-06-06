@@ -21,7 +21,7 @@ const [isEditProfileOpen, setIsEditProfileOpen] = useState(false);
         <div className="avatar__img-container">
           <img
             className="avatar"
-            src="/Images/Avatar.png"
+            src={profile.image}
             alt="User Avatar"
             id="profileImage"
           />

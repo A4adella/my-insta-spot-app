@@ -1,5 +1,5 @@
 import React from "react";
-import EditProfileModal from "./components/Editprofilemodal";
+import Editprofilemodal from "./Editprofilemodal";
 import { useState } from "react";
 import NewPostModal from "./NewPostModal";
 
@@ -13,16 +13,16 @@ const [isEditProfileOpen, setIsEditProfileOpen] = useState(false);
   const handleEditSave = (updatedProfile) => {
     setProfile(updatedProfile);
   };
-const [isNewPostModalOpen, setIsNewPostModalOpen] = useState(false);
-const [posts, setPosts] = useState([]);
-const handleNewPost = (title, imageFile) => {
-  const imgUrl = URL.createObjectURL(imageFile);
-  const newPost = {
-    title: capitalizeFirstLetter(title),
-    image: imgUrl,
-  };
-  setPosts([...posts, newPost]);
-};
+// const [isNewPostModalOpen, setIsNewPostModalOpen] = useState(false);
+// const [posts, setPosts] = useState([]);
+// const handleNewPost = (title, imageFile) => {
+//   const imgUrl = URL.createObjectURL(imageFile);
+//   const newPost = {
+//     title: capitalizeFirstLetter(title),
+//     image: imgUrl,
+//   };
+//   setPosts([...posts, newPost]);
+// };
  const capitalizeFirstLetter = (text) =>
     text.charAt(0).toUpperCase() + text.slice(1);
 
@@ -70,7 +70,7 @@ const handleNewPost = (title, imageFile) => {
             />
             Edit Profile
           </button>
-          <EditProfileModal
+          <Editprofilemodal
             isOpen={isEditProfileOpen}
             onClose={() => setIsEditProfileOpen(false)}
             currentName={profile.name}

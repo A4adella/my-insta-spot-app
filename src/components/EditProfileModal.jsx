@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 
-const EditProfileModal = ({ isOpen, onClose, currentName, currentProfession, currentImage, onSave }) => {
+const Editprofilemodal = ({ isOpen, onClose, currentName, currentProfession, currentImage, onSave }) => {
   const [fullName, setFullName] = useState('');
   const [profession, setProfession] = useState('');
   const [imagePreview, setImagePreview] = useState(null);
@@ -155,4 +155,4 @@ const EditProfileModal = ({ isOpen, onClose, currentName, currentProfession, cur
   );
 };
 
-export default EditProfileModal;
+export default Editprofilemodal;

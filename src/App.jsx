@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 import Navbar from "./components/Navbar";
 import AvatarSection from "./components/AvatarSection";
-import EditProfileModal from "./components/EditprofileModal";
 import NewPostModal from "./components/NewPostModal";
 import PostGrid from "./components/PostGrid";
 

@@ -1,11 +1,22 @@
 
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const NewPostModal = ({ isOpen, onClose, onPostUpload }) => {
   const [title, setTitle] = useState("");
   const [imageFile, setImageFile] = useState(null);
   const [error, setError] = useState("");
+
+  // Close modal when pressing Escape key
+  useEffect(() => {
+    const handleEsc = (event) => {
+      if (event.key === "Escape") {
+        onClose();
+      }
+    };
+    document.addEventListener("keydown", handleEsc);
+    return () => document.removeEventListener("keydown", handleEsc);
+  }, [onClose]);
 
   if (!isOpen) return null;
 
@@ -35,6 +46,7 @@ const NewPostModal = ({ isOpen, onClose, onPostUpload }) => {
     setError("");
     onClose();
   };
+ 
 
   return (
     <div

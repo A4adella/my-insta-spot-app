@@ -1,11 +1,14 @@
 
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect , useRef } from "react";
 
 const NewPostModal = ({ isOpen, onClose, onPostUpload }) => {
   const [title, setTitle] = useState("");
   const [imageFile, setImageFile] = useState(null);
   const [error, setError] = useState("");
+  const modalRef = useRef(null);
+
+
 
   // Close modal when pressing Escape key
   useEffect(() => {
@@ -51,7 +54,8 @@ const NewPostModal = ({ isOpen, onClose, onPostUpload }) => {
   return (
     <div
       className="newPostModal"
-      onClick={(e) => e.target === e.currentTarget && onClose()}
+      ref={modalRef}
+  onClick={(e) => {if (e.target === e.currentTarget ) {onClose()}}}
     >
       <div className="newPostModal__wrapper">
         <div className="newPostModal-content">
